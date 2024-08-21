@@ -1,7 +1,7 @@
 # GriffinTechWrite
 # Welcome to My GitHub Repository! 👋
 
-I’m **Griffin Thompson**, a technical writer, researcher, and innovator with a deep passion for Artificial Intelligence (AI), Robotics, and Medical Technology (MedTech). Currently, I’m spearheading the development of a groundbreaking surgical robotics program at Washington University in St. Louis and managing a journal that explores the latest advancements, financial trends, and the current state of MedTech companies.
+I’m **Griffin Thompson**, a technical writer, researcher, and innovator with a deep passion for Artificial Intelligence (AI), Robotics, and Medical Technology (MedTech). I’m the founder of a venture capital (VC) initiative focused on medical robotics and biotech, where I’ve led extensive documentation and strategic planning for a variety of companies across different branches. Additionally, I’m currently spearheading the development of a groundbreaking surgical robotics program at Washington University in St. Louis and managing a journal that explores the latest advancements, financial trends, and the current state of MedTech companies.
 
 ## 📚 What I Do
 
@@ -15,10 +15,13 @@ As a technical writer, I specialize in creating high-quality documentation, tuto
 - **Product Guides and FAQs**: Creating accessible guides and FAQs to help users troubleshoot issues and learn best practices.
 - **Interactive Content**: Offering the creation of interactive tutorials and content to enhance user engagement and understanding.
 
-## 🧠 Why I'm So Good at What I Do
+## 🧠 What Sets Me Apart
 
 ### Deep Technical Expertise
 My extensive experience in AI, robotics, and MedTech, combined with hands-on research in these areas, equips me with the knowledge to produce technically accurate and user-friendly documentation. Whether it's for a robotic surgery system or an AI-driven healthcare application, I understand the intricacies of these technologies and how to communicate them effectively.
+
+### Founder of a VC Initiative in Medical Robotics and Biotech
+As the founder of a VC initiative that focuses on medical robotics and biotech, I’ve had the opportunity to work on extensive documentation and strategic planning for various companies under different branches. This experience has honed my ability to create documentation that aligns with both business and technological goals, ensuring that companies can efficiently bring their innovations to market.
 
 ### Leading Innovation in Surgical Robotics
 As the driving force behind the creation of a surgical robotics program at Washington University in St. Louis, I am at the forefront of integrating AI and robotics into healthcare. This experience not only deepens my technical expertise but also gives me a unique perspective on the documentation needs of emerging technologies in this rapidly evolving field.
@@ -42,10 +45,11 @@ I have successfully led and contributed to numerous projects that require clear 
 
 ## 🌟 My Specialty
 
-I specialize in making highly technical concepts accessible and actionable through clear, concise, and impactful documentation. My deep involvement in the surgical robotics and MedTech sectors, combined with my technical expertise, allows me to create content that not only educates but also inspires innovation.
+I specialize in making highly technical concepts accessible and actionable through clear, concise, and impactful documentation. My deep involvement in the surgical robotics, MedTech, and biotech sectors, combined with my technical expertise, allows me to create content that not only educates but also inspires innovation.
 
 ## 🚀 Let’s Collaborate
 
 I’m always eager to take on new challenges and help companies bring their technologies to life through exceptional documentation. If you’re looking for a technical writer who combines a deep understanding of AI, robotics, and MedTech with outstanding communication skills, I’d love to work with you.
 
 Feel free to explore my repositories to see examples of my work and get in touch if you’re interested in collaborating on a project!
+
