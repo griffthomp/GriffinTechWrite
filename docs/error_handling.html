@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Error Handling and Troubleshooting &mdash; AI Vision Library Documentation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=0718c456" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Best Practices" href="best_practices.html" />
+    <link rel="prev" title="Train Model" href="train_model.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #003366" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AI Vision Library Documentation
+              <img src="_static/images.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detect_objects.html">Detect Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recognize_objects.html">Recognize Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="train_model.html">Train Model</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Error Handling and Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common-errors"><strong>Common Errors</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cuda-not-available-or-cuda-out-of-memory"><strong>1. `CUDA not available` or `CUDA out of memory`</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invalid-image-format-or-image-loading-failed"><strong>2. Invalid image format or Image loading failed</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#model-not-found-or-failed-to-load-model"><strong>3. Model not found or Failed to load model</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unexpected-keyword-argument-or-typeerror"><strong>4. Unexpected keyword argument or TypeError</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging-tips"><strong>Debugging Tips</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#handling-specific-exceptions"><strong>Handling Specific Exceptions</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-issues"><strong>Reporting Issues</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion"><strong>Conclusion</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="best_practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample_code.html">Sample Code and Tutorials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #003366" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AI Vision Library Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Error Handling and Troubleshooting</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/error_handling.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="error-handling-and-troubleshooting">
+<h1>Error Handling and Troubleshooting<a class="headerlink" href="#error-handling-and-troubleshooting" title="Link to this heading"></a></h1>
+<p>This section covers common errors and issues you may encounter when using the AI Vision Library, along with tips and strategies for troubleshooting and resolving these problems.</p>
+<section id="common-errors">
+<h2><strong>Common Errors</strong><a class="headerlink" href="#common-errors" title="Link to this heading"></a></h2>
+</section>
+<section id="cuda-not-available-or-cuda-out-of-memory">
+<h2><strong>1. `CUDA not available` or `CUDA out of memory`</strong><a class="headerlink" href="#cuda-not-available-or-cuda-out-of-memory" title="Link to this heading"></a></h2>
+<p><strong>Description</strong>: These errors occur when the library is configured to use GPU acceleration, but CUDA is either not installed, not available, or there isn’t enough GPU memory to handle the operation.</p>
+<p><strong>Solutions</strong>:
+- <strong>Check CUDA Installation</strong>: Ensure that CUDA is correctly installed and that your environment is configured to recognize it. You can verify this by running <cite>nvidia-smi</cite> in the terminal.
+- <strong>Fallback to CPU</strong>: If CUDA is not available, set <cite>device=’cpu’</cite> in the function parameters to use the CPU instead.
+- <strong>Optimize Memory Usage</strong>: If you encounter an out-of-memory error, try reducing the input image size, decreasing batch sizes, or using models with fewer parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of falling back to CPU</span>
+<span class="n">detected_objects</span> <span class="o">=</span> <span class="n">detect_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="invalid-image-format-or-image-loading-failed">
+<h2><strong>2. Invalid image format or Image loading failed</strong><a class="headerlink" href="#invalid-image-format-or-image-loading-failed" title="Link to this heading"></a></h2>
+<p><strong>Description</strong>: This error occurs when the input image is not in the expected format, such as an unsupported file type, corrupted file, or incorrectly loaded image.</p>
+<p><strong>Solutions</strong>:
+- <strong>Verify Image Format</strong>: Ensure that the image is loaded as a NumPy array, typically using OpenCV’s <cite>cv2.imread()</cite> function.
+- <strong>Check Image Path</strong>: Ensure that the image path is correct and that the file is accessible.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Correct way to load an image using OpenCV</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;sample_image.jpg&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">image</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to load image&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="model-not-found-or-failed-to-load-model">
+<h2><strong>3. Model not found or Failed to load model</strong><a class="headerlink" href="#model-not-found-or-failed-to-load-model" title="Link to this heading"></a></h2>
+<p><strong>Description</strong>: This error occurs when the library fails to load a pre-trained model or custom model file. This could be due to an incorrect file path, missing files, or unsupported model formats.</p>
+<p><strong>Solutions</strong>:
+- <strong>Check Model Path</strong>: Ensure that the model file path is correct and that the file exists.
+- <strong>Verify Model Format</strong>: Confirm that the model is saved in a supported format, such as <cite>.h5</cite> or <cite>.pt</cite>.
+- <strong>Re-download or Re-train</strong>: If using a pre-trained model, consider re-downloading it. If using a custom model, you may need to re-train and save it again.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of loading a model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;my_model.h5&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Failed to load model&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="unexpected-keyword-argument-or-typeerror">
+<h2><strong>4. Unexpected keyword argument or TypeError</strong><a class="headerlink" href="#unexpected-keyword-argument-or-typeerror" title="Link to this heading"></a></h2>
+<p><strong>Description</strong>: This error occurs when a function is called with an incorrect argument or data type, typically due to a typo or misunderstanding of the function’s parameters.</p>
+<p><strong>Solutions</strong>:
+- <strong>Double-check Function Signatures</strong>: Review the function documentation to ensure that all arguments are correctly named and of the expected type.
+- <strong>Use Default Parameters</strong>: If unsure about certain parameters, consider using the function’s default values.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of correct function call</span>
+<span class="n">detected_objects</span> <span class="o">=</span> <span class="n">detect_objects</span><span class="p">(</span><span class="n">image</span><span class="o">=</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="debugging-tips">
+<h2><strong>Debugging Tips</strong><a class="headerlink" href="#debugging-tips" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Enable Verbose Logging</strong>: When troubleshooting, enable verbose logging to get detailed information about the library’s operations. This can be particularly useful for understanding the flow of data and pinpointing where things go wrong.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span>
+
+<span class="c1"># Your code here</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Check for Dependency Issues</strong>: Ensure that all dependencies are correctly installed and compatible with the versions required by the AI Vision Library. Use a virtual environment to manage dependencies and avoid conflicts.</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Test with Simplified Inputs</strong>: If a complex operation fails, try simplifying the inputs. For example, use smaller images or a limited dataset to isolate the issue.</p></li>
+<li><p><strong>Validate Inputs and Outputs</strong>: Add checks to validate that inputs (such as images or model files) and outputs (such as detected objects) are in the expected format and contain valid data.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example of input validation</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Input image must be a NumPy array&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="handling-specific-exceptions">
+<h2><strong>Handling Specific Exceptions</strong><a class="headerlink" href="#handling-specific-exceptions" title="Link to this heading"></a></h2>
+<p>In addition to the common errors listed above, it’s important to handle specific exceptions that may arise during runtime.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">detected_objects</span> <span class="o">=</span> <span class="n">detect_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;File not found: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Value error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;An unexpected error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="reporting-issues">
+<h2><strong>Reporting Issues</strong><a class="headerlink" href="#reporting-issues" title="Link to this heading"></a></h2>
+<p>If you encounter an issue that you’re unable to resolve, consider reporting it to the developers. Provide as much detail as possible, including:</p>
+<ul class="simple">
+<li><p>A description of the error and when it occurs.</p></li>
+<li><p>The code snippet that produces the error.</p></li>
+<li><p>The output or error message you receive.</p></li>
+<li><p>Your system configuration, including OS, Python version, and CUDA version (if applicable).</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>Effective error handling is crucial for developing robust applications with the AI Vision Library. By understanding common errors and how to troubleshoot them, you can ensure smoother development and more reliable outcomes.</p>
+<p>For further assistance or to contribute improvements to the library, please visit our GitHub repository.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="train_model.html" class="btn btn-neutral float-left" title="Train Model" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="best_practices.html" class="btn btn-neutral float-right" title="Best Practices" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Griffin Thompson.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
