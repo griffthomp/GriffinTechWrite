@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detect Objects &mdash; AI Vision Library Documentation 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=0718c456" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Recognize Objects" href="recognize_objects.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #003366" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AI Vision Library Documentation
+              <img src="_static/images.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Detect Objects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#function-signature"><strong>Function Signature</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-usage"><strong>Example Usage</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-example-displaying-detected-objects-with-bounding-boxes"><strong>Detailed Example: Displaying Detected Objects with Bounding Boxes</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#advanced-usage-optimizing-detection-performance"><strong>Advanced Usage: Optimizing Detection Performance</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#common-errors-and-troubleshooting"><strong>Common Errors and Troubleshooting</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion"><strong>Conclusion</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-to-do-next"><strong>What to Do Next:</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recognize_objects.html">Recognize Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="train_model.html">Train Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="error_handling.html">Error Handling and Troubleshooting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="best_practices.html">Best Practices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample_code.html">Sample Code and Tutorials</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #003366" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AI Vision Library Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Detect Objects</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/detect_objects.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="detect-objects">
+<h1>Detect Objects<a class="headerlink" href="#detect-objects" title="Link to this heading"></a></h1>
+<p>The <cite>detect_objects</cite> function is one of the core features of the AI Vision Library. It enables real-time object detection in images or video frames using state-of-the-art computer vision algorithms. This function is optimized for performance, supporting GPU acceleration for real-time applications.</p>
+<section id="function-signature">
+<h2><strong>Function Signature</strong><a class="headerlink" href="#function-signature" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">detect_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cpu&#39;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Parameters:</span>
+<span class="sd">    - image: ndarray</span>
+<span class="sd">      The input image in which objects are to be detected. This should be a NumPy array, typically read using OpenCV or similar libraries.</span>
+
+<span class="sd">    - threshold: float, optional, default: 0.5</span>
+<span class="sd">      The confidence threshold for detecting objects. Objects with a detection confidence lower than this threshold will be ignored.</span>
+
+<span class="sd">    - device: str, optional, default: cpu</span>
+<span class="sd">      Specifies the device to run the detection on. Options include &#39;cpu&#39;, &#39;cuda&#39;, or any specific GPU like &#39;cuda:0&#39;. Using CUDA enables GPU acceleration, significantly improving detection speed.</span>
+
+<span class="sd">    Return Value:</span>
+<span class="sd">    - detected_objects: list of dicts</span>
+<span class="sd">      A list of dictionaries, where each dictionary contains information about a detected object. Each dictionary includes:</span>
+<span class="sd">      - bbox: tuple of (x_min, y_min, x_max, y_max)</span>
+<span class="sd">        The bounding box coordinates of the detected object.</span>
+<span class="sd">      - label: str</span>
+<span class="sd">        The label or class name of the detected object.</span>
+<span class="sd">      - confidence: float</span>
+<span class="sd">        The confidence score of the detection, indicating how likely it is that the detected object belongs to the specified class.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="example-usage">
+<h2><strong>Example Usage</strong><a class="headerlink" href="#example-usage" title="Link to this heading"></a></h2>
+<p>Here’s a basic example of how to use the <cite>detect_objects</cite> function to detect objects in an image:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ai_vision_library</span> <span class="kn">import</span> <span class="n">detect_objects</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="c1"># Load an image using OpenCV</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;sample_image.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># Perform object detection</span>
+<span class="n">detected_objects</span> <span class="o">=</span> <span class="n">detect_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
+
+<span class="c1"># Print out the detected objects</span>
+<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">detected_objects</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Detected </span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> with confidence </span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;confidence&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">% at </span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="detailed-example-displaying-detected-objects-with-bounding-boxes">
+<h2><strong>Detailed Example: Displaying Detected Objects with Bounding Boxes</strong><a class="headerlink" href="#detailed-example-displaying-detected-objects-with-bounding-boxes" title="Link to this heading"></a></h2>
+<p>This example demonstrates how to perform object detection and visualize the results by drawing bounding boxes around detected objects:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ai_vision_library</span> <span class="kn">import</span> <span class="n">detect_objects</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="c1"># Load an image using OpenCV</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;sample_image.jpg&#39;</span><span class="p">)</span>
+
+<span class="c1"># Perform object detection</span>
+<span class="n">detected_objects</span> <span class="o">=</span> <span class="n">detect_objects</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span><span class="p">)</span>
+
+<span class="c1"># Draw bounding boxes on the image</span>
+<span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">detected_objects</span><span class="p">:</span>
+    <span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="s1">&#39;bbox&#39;</span><span class="p">]</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">rectangle</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="p">),</span> <span class="p">(</span><span class="n">x_max</span><span class="p">,</span> <span class="n">y_max</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">putText</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">obj</span><span class="p">[</span><span class="s1">&#39;confidence&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&quot;</span><span class="p">,</span>
+                <span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">y_min</span><span class="o">-</span><span class="mi">10</span><span class="p">),</span> <span class="n">cv2</span><span class="o">.</span><span class="n">FONT_HERSHEY_SIMPLEX</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Display the image with detected objects</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s1">&#39;Detected Objects&#39;</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-usage-optimizing-detection-performance">
+<h2><strong>Advanced Usage: Optimizing Detection Performance</strong><a class="headerlink" href="#advanced-usage-optimizing-detection-performance" title="Link to this heading"></a></h2>
+<p>To achieve the best performance, especially in real-time applications, consider the following tips:</p>
+<ul class="simple">
+<li><p><strong>Use GPU Acceleration</strong>: Set <cite>device=’cuda’</cite> to leverage GPU acceleration. This can significantly speed up detection, especially for high-resolution images or real-time video feeds.</p></li>
+<li><p><strong>Adjust the Threshold</strong>: Fine-tune the <cite>threshold</cite> parameter depending on your application’s tolerance for false positives. Lowering the threshold might detect more objects but at the risk of increasing false positives.</p></li>
+<li><p><strong>Batch Processing</strong>: For scenarios where you need to process multiple images or frames in a video, consider batch processing to reduce overhead.</p></li>
+</ul>
+</section>
+<section id="common-errors-and-troubleshooting">
+<h2><strong>Common Errors and Troubleshooting</strong><a class="headerlink" href="#common-errors-and-troubleshooting" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><strong>Image Loading Issues</strong>: Ensure that the image is correctly loaded and is in the expected format (NumPy array). Use OpenCV’s <cite>cv2.imread()</cite> to read images as <cite>ndarray</cite>.</p></li>
+<li><p><strong>Device Compatibility</strong>: If CUDA is not installed or available on your machine, make sure to set <cite>device=’cpu’</cite> to avoid runtime errors.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h2><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Link to this heading"></a></h2>
+<p>The <cite>detect_objects</cite> function is a powerful tool within the AI Vision Library, designed to handle a wide range of object detection tasks efficiently. By understanding and utilizing its parameters and capabilities, you can integrate robust object detection into your projects with ease.</p>
+<p>For more advanced examples and use cases, be sure to explore the other sections of this documentation.</p>
+</section>
+<section id="what-to-do-next">
+<h2><strong>What to Do Next:</strong><a class="headerlink" href="#what-to-do-next" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p><strong>Create the `detect_objects.rst` File</strong>:
+- Open your <cite>source/</cite> directory and create a file named <cite>detect_objects.rst</cite>.
+- Paste the entire content above into this file.</p></li>
+<li><p><strong>Rebuild the Documentation</strong>:
+- Navigate back to your project root and run the <cite>make html</cite> command to regenerate the documentation, now including the detailed <cite>detect_objects</cite> section.</p></li>
+<li><p><strong>Review</strong>:
+- Open the generated HTML file (<cite>index.html</cite> in the <cite>build/html/</cite> directory) to ensure that the <cite>detect_objects</cite> documentation is correctly formatted and comprehensive.</p></li>
+</ol>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="recognize_objects.html" class="btn btn-neutral float-right" title="Recognize Objects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Griffin Thompson.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
