@@ -17,7 +17,7 @@ As a technical writer, I specialize in creating high-quality documentation, tuto
 
 ## 📖 Tutorials and Documentation
 
-- [Getting Started with ROS for Surgical Robotics: Installation Guide](docs/installation_guide.rst)
+- [Getting Started with ROS for Surgical Robotics: Installation Guide](https://griffthomp.github.io/GriffinTechWrite/))
 - [Configuring a ROS Workspace for Surgical Robotics](docs/workspace_configuration.rst)
 - [Running Your First ROS Node with Medical Imaging Data](docs/first_node_tutorial.rst)
 
