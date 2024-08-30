@@ -17,7 +17,10 @@ As a technical writer, I specialize in creating high-quality documentation, tuto
 
 ## 📖 Example Tutorials and Documentation
 
-- [Getting Started with ROS for Surgical Robotics: Installation Guide](https://griffthomp.github.io/GriffinTechWrite/))
+- [Introduction to the AI Vision Library Documentation](https://griffthomp.github.io/GriffinTechWrite/)
+
+  *This documentation serves as an introduction to the AI Vision Library, a powerful toolset designed to bring state-of-the-art computer vision capabilities to robotic applications, with a particular focus on surgical robotics. This guide provides an overview of the library’s core features, including object detection, object recognition, and model training, all within the context of enhancing robotic systems. It’s tailored for developers, researchers, and engineers who are looking to integrate advanced vision systems into their robotic projects, especially those in the medical and surgical fields. Whether you’re new to AI-based vision systems or an experienced developer, this introduction will help you understand the library's capabilities and get started with implementing sophisticated vision technologies in your robotic solutions.*
+
 
 
 ## 🧠 What Sets Me Apart
